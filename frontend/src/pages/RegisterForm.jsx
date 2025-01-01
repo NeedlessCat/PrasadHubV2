@@ -30,7 +30,7 @@ const RegisterForm = () => {
   const donationRazorpay = async (formData) => {
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/user/payment-razorpay",
+        "https://phub-v2-backend.onrender.com/api/user/payment-razorpay",
         formData
       );
 
@@ -48,7 +48,7 @@ const RegisterForm = () => {
             // Call verify API
             console.log(response);
             const verifyRes = await axios.post(
-              "http://localhost:4000/api/user/verifyRazorpay",
+              "https://phub-v2-backend.onrender.com/api/user/verifyRazorpay",
               {
                 razorpay_order_id: response.razorpay_order_id,
                 razorpay_payment_id: response.razorpay_payment_id,
